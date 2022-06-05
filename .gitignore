@@ -1,0 +1,10 @@
+# Binaries for programs and plugins
+main
+vds_list
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
+.vscode
+vls.log

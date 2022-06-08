@@ -3,8 +3,8 @@ module vds_list
 struct VdsListNode<T> {
 mut:
 	data T
-	next &VdsList<T> = 0
-	prev &VdsList<T> = 0
+	next &VdsListNode<T> = 0
+	prev &VdsListNode<T> = 0
 }
 
 struct VdsListIter<T> {
@@ -16,7 +16,7 @@ pub struct VdsList<T> {
 mut:
 	head &VdsListNode<T> = 0
 	tail &VdsListNode<T> = 0
-	iter &VdsList<T> = 0
+	iter &VdsListIter<T> = 0
 	len i64
 }
 
@@ -33,12 +33,16 @@ pub fn (mut list VdsList<T>) first() ?T {
 		return error('List is empty')
 	}
 
+	if list.iter == voidptr(0) {
+		list.iter = &VdsListIter<T>{}
+	}
+
 	list.iter.node = list.head
-	return list.next()?
+	return list.next()
 }
 
 pub fn (mut list VdsList<T>) next() ?T {
-	if list.iter.node == voidptr(0) {
+	if list.iter == voidptr(0) || list.iter.node == voidptr(0) {
 		return none
 	}
 
@@ -46,7 +50,7 @@ pub fn (mut list VdsList<T>) next() ?T {
 		list.iter.node = list.iter.node.next
 	}
 
-	return list.iter.node
+	return list.iter.node.data
 }
 
 //
@@ -133,7 +137,7 @@ pub fn (mut list VdsList<T>) pop_front() ?T {
 	return value
 }
 
-pub fn (mut list VdsList<T>) insert(idx int, item T) ? {
+pub fn (mut list VdsList<T>) insert(idx i64, item T) ? {
 	if idx < 0 || idx > list.len {
 		return error('Index out of bounds')
 	} else if idx == list.len {
@@ -147,7 +151,7 @@ pub fn (mut list VdsList<T>) insert(idx int, item T) ? {
 	}
 }
 
-fn (mut list VdsList<T>) insert_back(idx int, item T) {
+fn (mut list VdsList<T>) insert_back(idx i64, item T) {
 	mut node := list.node(idx + 1)
 	mut prev := node.prev
 
@@ -162,8 +166,8 @@ fn (mut list VdsList<T>) insert_back(idx int, item T) {
 	list.len += 1
 }
 
-fn (mut list VdsList<T>) insert_front(idx int, item T) {
-	mut ndoe := list.node(idx - 1)
+fn (mut list VdsList<T>) insert_front(idx i64, item T) {
+	mut node := list.node(idx - 1)
 	mut next := node.next
 
 	new := &VdsListNode<T>{
@@ -177,7 +181,7 @@ fn (mut list VdsList<T>) insert_front(idx int, item T) {
 	list.len += 1
 }
 
-fn (list &VdsList<T>) node(idx int) &VdsListNode<T> {
+fn (list &VdsList<T>) node(idx i64) &VdsListNode<T> {
 	if idx <= list.len / 2 {
 		mut node := list.head
 		for h := 0; h < idx; h += 1 {
@@ -194,7 +198,7 @@ fn (list &VdsList<T>) node(idx int) &VdsListNode<T> {
 	return node
 }
 
-pub fn (list &VdsList<T>) index(item T) ?int {
+pub fn (list &VdsList<T>) index(item T) ?i64 {
 	mut hn := list.head
 	mut tn := list.tail
 	for h, t := 0, list.len - 1; h <= t; {
@@ -211,7 +215,7 @@ pub fn (list &VdsList<T>) index(item T) ?int {
 	return none
 }
 
-pub fn (mut list VdsList<T>) delete(idx int) {
+pub fn (mut list VdsList<T>) delete(idx i64) {
 	if idx < 0 || idx >= list.len {
 		return
 	} else if idx == 0 {

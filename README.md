@@ -1,2 +1,2 @@
 # vds_list
-Doubly linked lsit, V implementation.
+Doubly linked list, V implementation.

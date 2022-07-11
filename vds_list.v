@@ -3,20 +3,20 @@ module vds_list
 struct ListNode<T> {
 mut:
 	data T
-	next &ListNode<T> = 0
-	prev &ListNode<T> = 0
+	next &ListNode<T>
+	prev &ListNode<T>
 }
 
 struct ListIter<T> {
 mut:
-	node &ListNode<T> = 0
+	node &ListNode<T>
 }
 
 pub struct List<T> {
 mut:
-	head &ListNode<T> = 0
-	tail &ListNode<T> = 0
-	iter &ListIter<T> = 0
+	head &ListNode<T>
+	tail &ListNode<T>
+	iter &ListIter<T>
 	len i64
 }
 
@@ -34,7 +34,9 @@ pub fn (mut list List<T>) first() ?T {
 	}
 
 	if list.iter == voidptr(0) {
-		list.iter = &ListIter<T>{}
+		list.iter = &ListIter<T>{
+			node: 0
+		}
 	}
 
 	list.iter.node = list.head
@@ -59,6 +61,8 @@ pub fn (mut list List<T>) next() ?T {
 
 pub fn (mut list List<T>) push_back(item T) {
 	mut new_node := &ListNode<T>{
+		next: 0
+		prev: 0
 		data: item
 	}
 
@@ -76,6 +80,8 @@ pub fn (mut list List<T>) push_back(item T) {
 
 pub fn (mut list List<T>) push_front(item T) {
 	mut new_node := &ListNode<T>{
+		next: 0
+		prev: 0
 		data: item
 	}
 

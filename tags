@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	C:/Users/geork/Documents/GitHub/vds_list/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220710.0/
+activityBar.activeBackground	./.vscode/settings.json	/^        "activityBar.activeBackground": "#0057a6",$/;"	s	object:workbench.colorCustomizations
+activityBar.activeBorder	./.vscode/settings.json	/^        "activityBar.activeBorder": "#ff2095",$/;"	s	object:workbench.colorCustomizations
+activityBar.background	./.vscode/settings.json	/^        "activityBar.background": "#0057a6",$/;"	s	object:workbench.colorCustomizations
+activityBar.foreground	./.vscode/settings.json	/^        "activityBar.foreground": "#e7e7e7",$/;"	s	object:workbench.colorCustomizations
+activityBar.inactiveForeground	./.vscode/settings.json	/^        "activityBar.inactiveForeground": "#e7e7e799",$/;"	s	object:workbench.colorCustomizations
+activityBarBadge.background	./.vscode/settings.json	/^        "activityBarBadge.background": "#ff2095",$/;"	s	object:workbench.colorCustomizations
+activityBarBadge.foreground	./.vscode/settings.json	/^        "activityBarBadge.foreground": "#e7e7e7",$/;"	s	object:workbench.colorCustomizations
+peacock.color	./.vscode/settings.json	/^    "peacock.color": "#003c73"$/;"	s
+sash.hoverBorder	./.vscode/settings.json	/^        "sash.hoverBorder": "#0057a6",$/;"	s	object:workbench.colorCustomizations
+statusBar.background	./.vscode/settings.json	/^        "statusBar.background": "#003c73",$/;"	s	object:workbench.colorCustomizations
+statusBar.foreground	./.vscode/settings.json	/^        "statusBar.foreground": "#e7e7e7",$/;"	s	object:workbench.colorCustomizations
+statusBarItem.hoverBackground	./.vscode/settings.json	/^        "statusBarItem.hoverBackground": "#0057a6",$/;"	s	object:workbench.colorCustomizations
+statusBarItem.remoteBackground	./.vscode/settings.json	/^        "statusBarItem.remoteBackground": "#003c73",$/;"	s	object:workbench.colorCustomizations
+statusBarItem.remoteForeground	./.vscode/settings.json	/^        "statusBarItem.remoteForeground": "#e7e7e7",$/;"	s	object:workbench.colorCustomizations
+titleBar.activeBackground	./.vscode/settings.json	/^        "titleBar.activeBackground": "#003c73",$/;"	s	object:workbench.colorCustomizations
+titleBar.activeForeground	./.vscode/settings.json	/^        "titleBar.activeForeground": "#e7e7e7",$/;"	s	object:workbench.colorCustomizations
+titleBar.inactiveBackground	./.vscode/settings.json	/^        "titleBar.inactiveBackground": "#003c7399",$/;"	s	object:workbench.colorCustomizations
+titleBar.inactiveForeground	./.vscode/settings.json	/^        "titleBar.inactiveForeground": "#e7e7e799"$/;"	s	object:workbench.colorCustomizations
+vds_list	./README.md	/^# vds_list$/;"	c
+vds_list	vds_list.v	/^module vds_list$/;"	m
+workbench.colorCustomizations	./.vscode/settings.json	/^    "workbench.colorCustomizations": {$/;"	o

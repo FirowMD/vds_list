@@ -20,6 +20,16 @@ mut:
 	len i64
 }
 
+pub fn create_list<T>() &List<T> {
+	list := &List<T> {
+		head: voidptr(0)
+		tail: voidptr(0)
+		iter: voidptr(0)
+		len: 0
+	}
+	return list
+}
+
 pub fn (list List<T>) is_empty() bool {
 	return list.len == 0
 }

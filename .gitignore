@@ -8,3 +8,4 @@ vds_list
 *.dll
 .vscode
 vls.log
+tags
